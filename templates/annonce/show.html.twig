@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de l'annonce{% endblock %}
+
+{% block body %}
+<body background="{{asset('media/aide.jpg')}}"> 
+<div class="container h-50">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-9 col-xl-0">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+                <div>
+                
+            
+                <div class="container">
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">{{annonce.title}}</p>
+        <div class="blockquote" >
+          <small> Publiée le {{annonce.publicationDate |date('d/m/y')}} à {{annonce.publicationDate |date('H:II')}}</small>
+        </div>
+        <h4><strong>Type: </strong>{{annonce.type}}</h4>
+        <h4><strong>Domaine: </strong>{{annonce.domaine}}</h4>
+        <h4><strong>Contenu: </strong>{{annonce.content}}</h4>
+        
+ 
+        <a href="{{ path('annonce_delete' ,{'id_Annonce' :annonce.Idannonce})}}" class="btn btn-outline-danger"  onclick="return confirm('Attention ceci va supprimer l\'annonce sélectionnée')" > Supprimer</a>
+        
+        <a href="{{ path('annonce_edit' ,{'id_Annonce' :annonce.Idannonce})}}" class="btn btn-outline-info"> Modifier</a>
+        <a class="btn btn-outline-success"href="{{ path('app_welcome') }}">Revenir à l'accueil</a>    
+    </div>
+                </div>
+                </div>
+                 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+{% endblock %}

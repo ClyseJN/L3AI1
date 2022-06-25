@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes mes Compétences{% endblock %}
+
+{% block stylesheets %}
+<body background="{{asset('media/aide.jpg')}}">
+{% endblock %}
+{% block body %}
+    <!--partie header -->
+    <div>
+   
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="/"> <img src="{{asset('media/logo.png')}}"   width ="100" alt="logo" />Entraide 2.0
+            </a>
+             
+             <a class="btn btn-light btn-lg" href="{{ path('app_competence_new') }}">Ajouter une compétence</a>
+            
+        </div>
+        </div>
+        </div>
+       
+    </div>
+ 
+   
+   
+  
+   </div>
+
+    <h1>Toutes mes compétences</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Domaine</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Date de création</th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for competence in competences %}
+            <tr>
+                <td>{{ competence.type }}</td>
+                <td>{{ competence.title }}</td>
+                <td>{{ competence.content }}</td>
+                <td>{{ competence.createdAt ? competence.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a class="btn btn-outline-info" href="{{ path('app_competence_show', {'id': competence.id}) }}">Voir</a>
+                    <a class="btn btn-outline-success" href="{{ path('app_competence_edit', {'id': competence.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Vous n'avez aucune compétence!</td>
+            </tr>
+        {% endfor %}
+        <a class="btn btn-light" href="{{ path('app_welcome') }}">Retour</a>
+        </tbody>
+    </table>
+
+{% endblock %}

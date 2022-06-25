@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<body background="{{asset('media/aide.jpg')}}">
+ <link rel="stylesheet" href="{{asset('css/accueil.css')}}">
+{% endblock %}
+{% block body %}
+
+    <div>
+    <link rel="stylesheet" href="{{asset('css/a.css')}}">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="logo">
+        
+    </div>
+        <div class="container-fluid">
+       
+        <a class="navbar-brand" href=""> 
+      
+        <img src="{{asset('media/logo.png')}}"   width ="100" alt="logo" />
+        
+        Entraide 2.0
+        </a>
+         
+    </div>
+    </div>
+    </div>
+         
+    <div class="annoncesTitre">
+        Toutes mes annonces
+    </div>
+    <div class="annoncesListe">
+        <annonce>
+        <h1> {{annonce.title}}</h1>
+        <div class="blockquote" >
+           Publiée le {{annonce.publicationDate |date('d/m/y')}} à {{annonce.publicationDate |date('H:II')}}
+        </div>
+        
+        <p>{{annonce.content}}</p>
+        
+ 
+        <a href="{{ path('annonce_delete' ,{'id_Annonce' :annonce.Idannonce})}}" class="btn btn-primary btn-lg"  onclick="return confirm('Attention ceci va supprimer l\'annonce sélectionnée')" > Supprimer</a>
+        
+        <a href="{{ path('annonce_edit' ,{'id_Annonce' :annonce.Idannonce})}}" class="btn btn-primary btn-lg"> Modifier</a>
+    </div>
+        </annonce>
+    </div>
+    
+
+        
+{% endblock %}

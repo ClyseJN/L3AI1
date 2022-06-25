@@ -1,0 +1,129 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<body background="{{asset('media/aide.jpg')}}">
+ <link rel="stylesheet" href="{{asset('css/monprofil.css')}}">
+{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ti-icons@0.1.2/css/themify-icons.css">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
+            <div class="card border-0 shadow">
+                
+                <img  class="avatar-holder"  src="{{asset('uploads/' ~ user.image)}}" alt="profil"  >
+                <div class="card-body p-1-9 p-xl-5">
+                    <div class="mb-4">
+                        <h3 class="h4 mb-0">{{user.FirstName}} {{user.LastName}}</h3>
+                        
+                    </div>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-3"><a href="/user/edit"><i class="far fa-envelope display-25 me-3 text-secondary"></i>{{user.email}}</a></li>
+                        <li class="mb-3"><a href="/user/edit"><i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i>0{{user.phone}}</a></li>
+                        <li><a href="/user/edit"><i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>{{user.adresse}}</a></li>
+                    </ul>
+    
+                    
+                </div>
+                
+            </div>
+    <br>
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+    <a href="/welcome">Retour à la page d'accueil</a>
+
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <a href="/messages">Gérer mes messages</a>
+
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <a href="/competence"><i ></i>Gérer mes compétences</a>
+
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <a href="/mesAnnonce">Gérer mes annonces</a>
+
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <a href="/user/edit">Gérer mes informations</a>
+
+  </li>
+  
+
+</ul>
+        </div>
+        
+        <div class="col-lg-8">
+            <div class="ps-lg-1-6 ps-xl-5">
+              
+                
+                <div class="wow fadeIn">
+                    <div class="text-start mb-1-6 wow fadeIn">
+                        <h2 class="mb-0 text-primary">Mes competences
+                        <a href="/competence/new" > 
+                         <img src="{{asset('media/ajouuter.png')}}" float="left" width="56" height="56" class="rounded-circle mr-3" alt="profile">
+                        </a>
+                        <a href="/competence" > 
+                         <img src="{{asset('media/modifier.png')}}"  width="56" height="56" class="rounded-circle mr-3" alt="modifier">
+                        </a>
+                    </h2
+                    </div>
+                {%for competence in competences %}
+                    <div class="progress-style1">
+                        <div class="progress-text">
+                            <div class="row">
+                                <div class="col-6 fw-bold">{{competence.type}}</div>
+                               
+                            </div>
+                        </div>
+                        <div class="custom-progress progress rounded-3 mb-4">
+                            <div class="animated custom-bar progress-bar slideInLeft" style="width:70%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="10" role="progressbar"></div>
+                        </div>
+                    </div>
+                
+                     {%endfor%}
+                 <div class="text-start mb-1-6 wow fadeIn">
+                        <h2 class="mb-0 text-primary">Mes Annonces
+                         <a href="/annonce" > 
+                         <img src="{{asset('media/ajouuter.png')}}"  width="56" height="56" class="rounded-circle mr-3" alt="ajouter">
+                        </a>
+                         <a href="/mesAnnonce" > 
+                         <img src="{{asset('media/modifier.png')}}"  width="56" height="56" class="rounded-circle mr-3" alt="modifier">
+                        </a>
+                        </h2>
+                    </div>
+                     <div class="card">
+               
+                <div class="card-body h-100">
+                 {%for annonce in annonces %}
+                
+                
+                     <div class="media">
+                     <div class="card border-primary mb-3" style="max-width: 40rem;">
+                        <img src="{{asset('uploads/' ~ user.image)}}" width="56" height="56" class="rounded-circle mr-3" alt="profile">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">{{user.FirstName}} {{user.LastName}}</h4>
+                            <small>Publiée le :{{annonce.publicationDate |date('d/m/y')}}</small>
+                            </div>
+                        <div class="media-body">
+    
+                            <h4 class="card-title">Titre:{{annonce.title}}</h4>
+                            <h6>Type de l'annonce: {{annonce.type}}</h6>
+                            <p> {{annonce.content}}</p>
+
+                        </div>
+                    </div>
+                    </div>
+                    {%endfor%}
+                    </div>
+                </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

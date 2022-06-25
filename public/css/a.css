@@ -1,0 +1,306 @@
+
+.presentation h1{
+    color: black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font: size 7px;;
+    font-style: oblique;
+    font-weight: 200;
+    position:relative;
+    text-align: center;
+}
+.presentation h1{
+    font-weight: 500;
+    font-size: 6rem;
+    margin-bottom: 3rem;
+    color: #0c0b0c;
+    text-align: center;
+  }
+.presentation p::first-letter{
+    color :rgb(18, 66, 50);
+    
+    float: inline-start;
+    font-size: 300%;
+  
+
+}
+.presentation p{
+    color:hsl(240, 17%, 5%);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    font-size: 300%;
+    border-radius:50px 25px 50px 25px;
+    background-color:rgb(101, 179, 154);
+    box-shadow: 5px 3px 5px 3px;
+
+    transform: scale(0.7);
+
+}
+
+
+body {
+  background-color: #1e1f26;
+}
+
+div img {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+.slider {
+    
+   
+    width: 800px;
+    margin: 0px auto;
+    position: relative;
+    overflow: hidden;
+    transform: scale(0.9);
+    
+  }
+  .slider-viewport {
+    width: cal(800px x *3);
+    height: 400px;
+    overflow: hidden;
+  }
+  .slider-content {
+   width: calc(800px *4);
+   animation: glisse 20s infinite;
+  }
+  .slider-content img {
+      width: 800px;
+      height: 400px;
+    }
+  @keyframes glisse{
+    0%{
+      transform: translateX(0);
+    }
+    50%{
+      transform: translateX(-800px);
+    }
+    100%{
+      transform: translateX(-1600px);
+    }
+  }
+.category h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana;
+    font-weight: 300;
+    font-size: 4rem;
+    margin-top: 50mm;
+    margin-bottom: 3rem;
+    color: #0b0c0c;
+    text-align: center;
+}
+.category{
+
+    border-radius:25px 25px 50px 25px;
+    background-color:rgba(7, 57, 90, 0.192);
+    box-shadow: 5px 3px 5px 3px;
+
+    transform: scale(0.9);
+
+
+}
+.container {
+  margin: 0 auto;
+  max-width: 1230px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+ 
+  
+}
+.category__list {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.category__item {
+  width: calc(25% - 20.5px);
+  padding: 2.5rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  word-wrap: break-word;
+  overflow: hidden;
+
+}
+.category__item:first-child {
+  box-shadow: 0 20px 35px -5px rgba(21, 160, 28, 0.25);
+}
+.category__item:nth-child(2) {
+  box-shadow: 0 20px 35px -5px rgba(82, 108, 190, 0.25);
+}
+.category__item:nth-last-child(2) {
+  box-shadow: 0 20px 35px -5px rgba(238, 115, 107, 0.25);
+}
+.category__item:last-child {
+  box-shadow: 0 20px 35px -5px rgba(184, 138, 233, 0.25);
+}
+.category__image {
+  border-radius: inherit;
+  object-fit: cover;
+  margin-bottom: rem;
+  width: 100%;
+  height: 10rem;
+}
+.category__name {
+    margin-top: 1rem;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.category__details {
+  font-size: 1.4rem;
+  color: #130101;
+    display: block; 
+}
+.category__details i {
+  margin-left: 1rem;
+  
+}
+
+
+
+
+
+.service-slider {
+
+    border-radius:25px 25px 50px 25px;
+    background-color:rgba(7, 57, 90, 0.589);
+    box-shadow: 5px 3px 5px 3px;
+
+    transform: scale(0.9);
+
+
+}
+
+.service-slider  h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 200;
+    font-size: 6rem;
+    margin-top: 50mm;
+    margin-bottom: 3rem;
+    color: #000000;
+    text-align: center;
+    margin-left: 5rem;
+    margin-right: auto;
+}
+.slider-view {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+ 
+  
+}
+.service_list {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.service__item {
+  width: calc(35% - 25.5px);
+  margin: 20px 0px;
+  margin-bottom: 4 rem;
+  padding: 2.5rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  word-wrap: break-word;
+  overflow: hidden;
+  margin:2;
+
+}
+.service__item:first-child {
+  box-shadow: 0 20px 35px -5px rgba(21, 160, 28, 0.25);
+}
+.service__item:nth-child(2) {
+    
+  box-shadow: 0 20px 35px -5px rgba(82, 107, 190, 0.863);
+}
+.service__item:nth-child(3) {
+    box-shadow: 0 20px 35px -5px rgba(165, 116, 25, 0.918);
+  }
+  .service__item:nth-child(4) {
+    box-shadow: 0 20px 35px -5px rgba(148, 23, 106, 0.959);
+  }
+  .service__item:nth-child(5) {
+    box-shadow: 0 20px 35px -5px rgba(133, 59, 87, 0.979);
+  }
+.service__item:nth-child(6) {
+  box-shadow: 0 20px 35px -5px rgba(238, 116, 107, 0.979);
+  
+}
+.service__item:last-child {
+  box-shadow: 0 20px 35px -5px rgba(184, 138, 233, 0.849);
+}
+.service__image {
+  border-radius: inherit;
+ 
+  object-fit: cover;
+  margin-bottom: rem;
+  width: 100%;
+  height: 10rem;
+}
+
+
+  .service__name {
+      margin-top: 1rem;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  .service__details {
+    font-size: 2rem;
+    color: #000000;
+      display: block; 
+  }
+  .service__details i {
+    margin-left: 1rem;
+    
+  }
+
+.footer{
+    
+    background-color:#2c3e50;
+    width: 100%;
+}
+.footer__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+  .footer__item {
+    width: 25%;
+  }
+  .footer__link {
+    color: black;
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 1rem;
+    
+  }
+  .footer__title{
+      color:aliceblue;
+      font-size: 1.5rem;
+     
+      display: block;
+      margin-bottom: 2rem;
+  }
+.logo__text{
+    color:rgb(255, 255, 255);
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 2rem; 
+}

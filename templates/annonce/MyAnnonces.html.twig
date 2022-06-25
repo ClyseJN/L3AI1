@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes mes annonces{% endblock %}
+
+{% block stylesheets %}
+<body background="{{asset('media/aide.jpg')}}">
+{% endblock %}
+{% block body %}
+    <!--partie header -->
+    <div>
+   
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="/"> <img src="{{asset('media/logo.png')}}"   width ="100" alt="logo" />Entraide 2.0
+            </a>
+             <a  href="{{ path('app_welcome') }}">Revenir à l'accueil</a>
+             <a href='/annonce' >Ajouter une annonce</a>
+            
+        </div>
+        </div>
+        </div>
+       
+    </div>
+ 
+   
+   
+  
+   </div>
+
+    <h1>Toutes mes annonces</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Domaine</th>
+                <th>Lieu</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Date de création</th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for annonce in annonces %}
+            <tr>
+                <td>{{ annonce.type }}</td>
+                <td>{{ annonce.domaine }}</td>
+                <td>{{ annonce.location }}</td>
+                <td>{{ annonce.title }}</td>
+                <td>{{ annonce.content }}</td>
+                <td>{{ annonce.publicationDate ? annonce.publicationDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a class="btn btn-outline-info" href="{{ path('annonce_vue' ,{'idAnnonce' :annonce.Idannonce})}}">Voir</a>
+                    <a class="btn btn-outline-success" href="{{ path('annonce_edit' ,{'id_Annonce' :annonce.Idannonce})}}">Modifier</a>
+                    <a href="{{ path('annonce_delete' ,{'id_Annonce' :annonce.Idannonce})}}" class="btn btn-outline-danger"  onclick="return confirm('Attention ceci va supprimer l\'annonce sélectionnée')" > Supprimer</a>                
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Vous n'avez aucune annonce!</td>
+            </tr>
+        {% endfor %}
+        
+        </tbody>
+    </table>
+
+{% endblock %}

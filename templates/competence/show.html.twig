@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Competence{% endblock %}
+
+{% block body %}
+<body background="{{asset('media/aide.jpg')}}"> 
+<div class="container h-50">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-9 col-xl-0">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-11">
+            <div class="row justify-content-center">
+                <div>
+                
+            
+                <div class="container">
+                <table >
+        <tbody >
+            <tr>
+                <th >Titre</th>
+                <td >{{ competence.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ competence.content }}</td>
+            </tr>
+            <tr>
+                <th>Date de création</th>
+                <td>{{ competence.createdAt ? competence.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+                </div>
+                </div>
+                 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body> 
+    
+    
+    <a class="btn btn-outline-success" href="{{ path('app_competence_edit', {'id': competence.id}) }}">Modifier</a><p></p>
+
+    <a class="btn btn-outline-primary" href="{{ path('app_competence_index') }}">Ma liste de compétences</a>
+    </br>
+    
+   
+{% endblock %}

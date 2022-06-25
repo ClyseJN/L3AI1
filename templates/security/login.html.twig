@@ -1,0 +1,50 @@
+{#Titre de la page#}
+{% block title %}{% endblock %}
+{% block stylesheets %}
+       <link rel="stylesheet" href="{{asset('css/register.css')}}">
+       <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
+{% endblock %}
+{#Corps de la page#}
+{% block body  %}
+
+  <class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Merci de vous connecter</h5>
+            <form method="post">
+            {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+    
+              <div class="form-floating mb-3">
+               <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                <label for="inputEmail">Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" name="password" id="inputPassword" class="form-control"  autocomplete="current-password" required placeholder="Password">
+                <label for="inputPassword">Mot de passe</label>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Se connecter
+                </button>
+              </div>
+              <hr class="my-4">
+              <div class="d-grid mb-2">
+               <a class="btn btn-google btn-login text-uppercase fw-bold" href="/reset-password">Mot de passe oublié ?</a>
+              </div>
+              
+              <div class="d-grid">
+                <a class="btn btn-facebook btn-login text-uppercase fw-bold" href="/register">Créer un compte ?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

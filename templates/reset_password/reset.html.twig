@@ -1,0 +1,16 @@
+{% block stylesheets %}
+       <link rel="stylesheet" href="{{asset('css/register.css')}}">
+       <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
+{% endblock %}
+
+{% block body %}
+<body background="{{asset('media/aide.jpg')}}">
+    <h1>Réinitialiser votre mot de passe</h1>
+
+    {{ form_start(resetForm) }}
+        {{ form_row(resetForm.plainPassword) }}
+        <p></p>
+        <button class="btn btn-primary">Réinitialiser</button>
+    {{ form_end(resetForm) }}
+</body>
+{% endblock %}

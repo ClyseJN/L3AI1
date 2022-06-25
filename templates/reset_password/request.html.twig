@@ -1,0 +1,46 @@
+
+{% block stylesheets %}
+     
+       <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
+{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+  <class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Réinitialiser mon mot de passe</h5>
+            <form method="post">
+            
+           
+              {{ form_start(requestForm) }}
+              <div>
+                    <p>
+                        Entrez votre adresse e-mail et nous vous enverrons un
+                        lien pour réinitialiser votre mot de passe.
+                    </p>
+                </div>
+                {{ form_row(requestForm.email) }}
+                
+                <p></p>
+                <div class="d-grid">
+                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Envoyer
+                </button>
+              </div>
+              
+            {{ form_end(requestForm) }}
+              
+              <div class="d-grid">
+                <a class="btn btn-facebook btn-login text-uppercase fw-bold" href="/login">Se connecter ?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

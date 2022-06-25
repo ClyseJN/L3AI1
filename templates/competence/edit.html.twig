@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier compétences{% endblock %}
+
+{% block body %}
+<body background="{{asset('media/aide.jpg')}}"> 
+<div class="container h-50">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-9 col-xl-0">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+                <div>
+                
+            
+                <div class="container">
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Modifier ma compétence</p>
+                 {{ include('competence/_form.html.twig', {'button_label': 'Modifier'}) }} 
+                 </br>
+                 {{ include('competence/_delete_form.html.twig', {'button_label': 'Supprimer'}) }}
+                 </br>
+                 <a class="btn btn-outline-primary" href="{{ path('app_competence_index') }}">Ma liste de compétences</a>
+                </div>
+                </div>
+                 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+{% endblock %}

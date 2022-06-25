@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultats de la recherche!{% endblock %}
+
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/a.css')}}">
+{% endblock %}
+{% block body  %}
+    <body background="{{asset('media/aide.jpg')}}">
+    <div>
+    
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="logo">
+        
+    </div>
+        <div class="container-fluid">
+       
+        <a class="navbar-brand" href="/"> 
+        <img src="{{asset('media/logo.png')}}"   width ="100" alt="logo" />
+        
+        Entraide 2.0
+        </a>
+         
+    </div>
+    </div>
+      
+
+    </div>
+   {% if app.request.method == 'POST' %}
+    <div>
+      
+        {% if annonces | length == 0 %}
+            <h4>Aucun résulat pour votre recherche.</h4>
+           {% else %}
+               <h3 class="mt-3">Vos résulats de recherche :</h3>
+                <div class="annoncesListe">
+         <!-- pour toute annonce dans la BD on va afficher le titre et le contenus -->
+                    {% for annonce in annonces %}
+                    {% if annonce.status is same as('1') %}
+                            <annonce>
+                            
+                            <!--pour chaque annonce on passe son id dans le chemin de la page -->
+                            {########################################################################}
+                            <div class="card bg-light mb-3" style="max-width: 100rem;">
+                               <div class="card-header"><h4 class="card-title">{{annonce.title}}</h4>
+                               </div>
+                               <div class="col-md-4">
+                                    <a  href="{{ path('UserAnnonce' ,{'id' :annonce.Idannonce})}}">
+                                    <img   width="56" height="56" class="rounded-circle mr-3" src="{{asset('uploads/' ~ annonce.idOwner.image)}}" alt="profil"  >
+                                    </a>
+                               </div>
+                               <div class="col-md-8">
+                                  <div class="card-body">
+            
+                                    <p class="card-text"><strong>{{annonce.content}}</strong></p>
+
+                                    <!--affichage de la date -->
+                                    <p>Publiée le: <strong>{{annonce.publicationDate |date('d/m/y')}} </strong> à <strong>{{annonce.publicationDate  |date('H:i:s')}}</strong> par <strong>{{annonce.IdOwner.getFirstName}} {{annonce.IdOwner.getLastName}}</strong></p>
+                                    <p>Contact: <strong>{{annonce.IdOwner.getUserIdentifier}} </strong></p>
+                                    {#<a href="{{ path('contact',{'id_owner' :annonce.getIDUser(annonce.IdOwner)})}}}" class="btn btn-primary btn-lg"> contacter</a>#}
+                                    <a href="/send" class="btn btn-success"> Contacter</a>
+                                   
+                                  </div>
+                                </div>
+                            </div>
+                            {########################################################################}
+      
+                              
+                 {% endif %}
+                {% endfor %}
+                </div>
+                <div class="accordion" id="accordionExample">
+  
+    
+  </div>
+</div>
+    </div>
+          {% endif %}
+{% endif %}
+
+
+ 
+{% endblock %}

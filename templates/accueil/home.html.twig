@@ -1,0 +1,191 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+     <body background="{{asset('media/aide.jpg')}}" >
+     <link rel="stylesheet" href="{{asset('css/a.css')}}">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="logo">
+        
+    </div>
+        <div class="container-fluid">
+       
+        <a class="navbar-brand" href=""> 
+      
+        <img src="{{asset('media/logo.png')}}"   width ="100" alt="logo" />
+        
+        Entraide 2.0
+        </a>
+      
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+           
+          
+        </ul>
+        <!--<form class="d-flex">-->
+        <nav class="d-flex">
+            
+            <li class="nav-item">
+            <a class="btn btn-light" href="/login">Connexion</a>
+            </li>
+            <li class="nav-item">
+            <a class="btn btn-light" href="/register">Inscription</a>
+            </li>
+            <!--
+            <li class="nav-item">
+            <a class="nav-link" href="/mesAnnonce"> Gérer mes annonce</a>
+            </li>
+            -->
+        <!--</form>-->
+        </nav>
+        
+        </div>
+        
+    </div>
+       
+    </nav>
+      <div class="container">
+      {% block boody %} 
+      </div>
+    <div class= "centerpage" >
+    
+      
+     <nav class="presentation">
+     <br>
+           <h1>Bienvenue sur Entr'aide 2.0</h1>
+           <p>une plateforme en ligne de mise en relation direct et d'échange de services entre particuliers.<br>
+      La règle est très simple :  Aider les gens pour qu’ils vous aident en retour !<br>
+      <br>&emsp; &emsp; &emsp;&emsp;Le Bonheur … C’est de donner & d’aider les autres !
+      
+      </p>
+    
+       </select>
+   </p>
+</form>
+            
+    </div>
+     
+  
+     <section class="category">
+      <h1><br>Comment ça marche ? En 4 étapes </h1>
+        <div class="container">
+          <ul class="category__list">
+            <li class="category__item">
+              <img src="https://salsa-cubana.fr/wp-content/uploads/2019/09/resume.png" alt="" class="category__image" />
+              <h3 class="category__name">Inscription </h3>
+              <p class="category__details">Remplissez le formulaire d'inscription pour rejoindre les membres d'Entraide 2.0</p>
+            </li>
+            <li class="category__item">
+              <img src="https://cdn-icons-png.flaticon.com/512/3095/3095221.png" alt="" class="category__image" />
+              <h3 class="category__name">Compétences</h3>
+              <p class="category__details">Saisissez vos compétences dans différents domaines afin de faciliter la recherche.  </p>
+            </li>
+            <li class="category__item">
+              <img src="https://png.pngtree.com/png-vector/20190501/ourmid/pngtree-announcement-icon-design-png-image_1014982.jpg" alt="" class="category__image" />
+              <h3 class="category__name">Annonces</h3>
+              <p class="category__details">Publiez une annonce, pour proposer (et/ou) demander de l'aide. N'oubliez pas de préciser l'adresse pour faciliter la rechreche.
+            </li>
+            <li class="category__item">
+              <img src="https://www.gie-gers.fr/wp-content/themes/gers/img/icon-mission-collegues.png" alt="" class="category__image" />
+              <h6 class="category__name">Rencontres</h6>
+              <p class="category__details">Répondez aux messages des
+               utilisateurs intéresés par votre annonce et fixez
+                un rendez-vous pour effectuer/recevoir un service. </p>
+            </li>
+          
+          </ul>
+        </div>
+      </section>
+       
+<div class ="service-slider">
+  <h1><br>Nos services  </h1>
+      <div class ="slider-view">
+          
+          <ul class="service_list">
+            <li class="service__item">
+              <img src="{{asset('https://www.pepsdom.fr/oc-content/uploads/646/940.jpg')}}" alt="" class="category__image" />
+              <h3 class="service__name">Démenagement </h3>
+              <p class="service__details">Pour emballer, charger, transporter et réinstaller sans casse.</p>
+            </li>
+            <li class="service__item">
+              <img src="{{asset('https://www.travauxonline.com/wp-content/uploads/2019/03/depannage-plombier-paris-800x445.jpg')}}" alt="" class="service__image" />
+              <h3 class="service__name">Bricolage à domicile </h3>
+              <p class="service__details">Pour tous vos travaux d’aménagement, électricité, rénovation, plomberie, 
+              jardinage...</p>
+            </li>
+             <li class="service__item">
+              <img src="{{asset('https://c8.alamy.com/compfr/t4fnwm/la-cuisine-la-cuisine-logo-cute-girl-en-chef-hat-cartoon-vector-illustration-t4fnwm.jpg')}}" alt="" class="service__image" />
+              <h3 class="service__name">Cuisine</h3>
+              <p class="service__details">Pour manger sain et varié.</p>
+            </li>
+            <li class="service__item">
+              <img src="{{asset('https://pwiic.com/Public/upload/content/picture/3f3c4809732c866dd35e0e04d47f256c.jpg')}}" alt="" class="service__image" />
+              <h3 class="service__name">Animaux</h3>
+              <p class="service__details">Pour prendre soin du bien-être des animaux.</p>
+            </li>
+            <li class="service__item">
+              <img src="{{asset('https://www.babychou.com/wp-content/uploads/2019/12/zo%C3%A9-300x245.png')}}" alt="" class="service__image" />
+              <h3 class="service__name">Enfants</h3>
+              <p class="service__details">Pour prendre le relais des parents, 
+              veiller à la sécurité de l’enfant et contribuer à son bon développement.</p>
+            </li>
+            </li>
+            </li>
+            <li class="service__item">
+              <img src="{{asset('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpp_fHq6LiHbND-5VGSnNd9B7U_gUFja7g8IUl91qUVRjzzjDkblY0BOAJ9uGbksrmKKY&usqp=CAU')}}" alt="" class="service__image" />
+              <h3 class="service__name">Cours particuliers</h3>
+              <p class="service__details">Pour avancer en confiance et réussir son année.</p>
+            </li>
+            <li class="service__item">
+              <img src="{{asset('https://www.qris-france.fr/wp-content/uploads/2020/10/defaillance-serveur-maintenance-informatique.png')}}" alt="" class="service__image" />
+              <h3 class="service__name">Informatique</h3>
+              <p class="service__details">Pour tout dépannage en informatique.</p>
+            </li>
+          </ul>
+              
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+     <footer class="footer">
+        <div class="container footer__container">
+          <div class="footer__item">
+            <a href="" class="navbar navbar-expand-lg navbar-dark bg-primary">
+              <div class="logo__text" >Entr'aide 2.0</div>
+            </a>
+          </div>
+          <div class="footer__item">
+         
+            
+            </ul>
+          
+          </div>
+          <div class="footer__item">
+             <div  class="footer__title">A propos de nous</div>
+            <ul>
+            <il><a href="#" class="footer__link">Notre équipe</a></il>
+            
+            </ul>
+          </div>
+          <div class="footer__item">
+             <div  class="footer__title">Authentification</div>
+            <ul>
+            <il><a href="/register" class="footer__link">Inscription</a></il>
+            <il><a href="/login" class="footer__link">Connexion</a></il>
+            
+            </ul>
+          </div>
+        </div>
+      </footer>
+    
+  </div>
+    </div>
+      </div>
+    </div>
+{% endblock %}
+{% endblock %}
+
